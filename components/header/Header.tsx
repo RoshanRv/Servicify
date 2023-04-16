@@ -9,25 +9,34 @@ import { BiMenu } from "react-icons/bi"
 import { AiOutlineClose } from "react-icons/ai"
 import Profile from "./Profile"
 import { useQuery } from "@tanstack/react-query"
+import useUser from "@/store/useUser"
+import { shallow } from "zustand/shallow"
 
 const Header = () => {
     const router = useRouter()
     const pathname = usePathname()
 
+    const { setUser, user } = useUser(
+        (state) => ({ setUser: state.setUser, user: state.user }),
+        shallow
+    )
+
     const { data, isError, isSuccess } = useQuery({
         queryKey: ["users"],
         queryFn: () =>
             axios.get<UserProps>(
-                `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/api/me`,
+                `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/api/users/me`,
                 {
                     withCredentials: true,
                 }
             ),
+        onSuccess: (res) => {
+            setUser(res.data)
+        },
         retry: 1,
     })
 
     // const isSuccess = false
-    const user = {} as UserProps
 
     const { isOn: isDark, toggleOn: toggleDark } = useToggle()
     const { isOn: isNav, toggleOn: toggleNav } = useToggle()
@@ -79,17 +88,19 @@ const Header = () => {
                     </>
                 ) : (
                     <>
-                        {/* <Link href={"/browse-classroom"}>
-                            <h1
-                                className={`relative before:absolute before:contents-[''] ${
-                                    pathname == "/browse-classroom"
-                                        ? "before:w-full"
-                                        : "before:w-0"
-                                }  before:transition-all origin-center before:h-1 before:bg-pri before:top-full before:left-0  rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 p-2`}
-                            >
-                                Find Classroom
-                            </h1>
-                        </Link> */}
+                        {user?.role !== "user" && (
+                            <Link href={"/requests"}>
+                                <h1
+                                    className={`relative before:absolute before:contents-[''] ${
+                                        pathname == "/requests"
+                                            ? "before:w-full"
+                                            : "before:w-0"
+                                    }  before:transition-all origin-center before:h-1 before:bg-pri before:top-full before:left-0  rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 p-2`}
+                                >
+                                    Requests
+                                </h1>
+                            </Link>
+                        )}
 
                         {/* Profile */}
                         <Profile user={user} />

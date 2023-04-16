@@ -58,7 +58,7 @@ export const Plans = ({ first = false, handleSignUp, handleSubmit }: Props) => {
                         onClick={
                             handleSignUp && handleSubmit
                                 ? handleSubmit(handleSignUp)
-                                : () => null
+                                : () => console.log("...")
                         }
                         width
                     >

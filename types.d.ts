@@ -33,3 +33,12 @@ interface WorkerProps {
     plan: number
     experience: number
 }
+
+interface RequestProps {
+    name: string
+    email: string
+    role: string
+    phoneno: string
+    id: string
+    servicemanid: string
+}

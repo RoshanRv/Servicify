@@ -32,6 +32,7 @@ const ServiceCard = ({ serviceData, index }: Props) => {
                     <div className="  md:flex items-center justify-center">
                         {/* Img */}
                         <Image
+                            quality={3}
                             className=" md:w-64 w-52 -mt-52 md:mt-0 md:-ml-40  transition-all "
                             src={serviceData.img}
                             alt={serviceData.title + "_img"}

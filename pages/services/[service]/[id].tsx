@@ -102,31 +102,26 @@ const SeriviceIdDetials = () => {
                                     {/* Phone */}
                                     <div className="flex items-center text-3xl gap-x-1 ">
                                         <AiOutlinePhone className="p-2 bg-pri text-5xl rounded-lg text-light " />
-                                        <p>
-                                            {data.data[0].phoneno ||
-                                                "3423423423"}
-                                        </p>
+                                        <p>{data.data[0].phoneno}</p>
                                     </div>
                                     {/* Email */}
                                     <div className="flex items-center text-3xl gap-x-1 ">
                                         <AiOutlineMail className="p-2 bg-pri text-5xl rounded-lg text-light " />
-                                        <p>
-                                            {data.data[0].email ||
-                                                "dasd@ads.com"}
-                                        </p>
+                                        <p>{data.data[0].email}</p>
                                     </div>
                                     {/* Price */}
                                     <div className="flex items-center text-3xl gap-x-1 ">
                                         <FaMoneyBillAlt className="p-2 bg-pri text-5xl rounded-lg text-light " />
                                         <p>
-                                            {data.data[0].price + "/hr" ||
-                                                "300" + "/hr"}
+                                            {data.data[0].price
+                                                ? data.data[0].price + "/hr"
+                                                : "-- /hr"}
                                         </p>
                                     </div>
                                     {/* Price */}
                                     <div className="flex items-center text-3xl gap-x-1 ">
                                         <FaWheelchair className="p-2 bg-pri text-5xl rounded-lg text-light " />
-                                        <p>{data.data[0].experience || "40"}</p>
+                                        <p>{data.data[0].experience || "--"}</p>
                                     </div>
                                 </div>
                                 <ClickButton size={"small"} onClick={toggleOn}>

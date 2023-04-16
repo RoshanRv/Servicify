@@ -17,7 +17,7 @@ const serviceData = [
         title: "Painting Services",
         desc: "Painters At Your Door-Step At Lowest Cost!!!",
         img: PAINTER_3D,
-        link: "/services/painter",
+        link: "services/painter",
         icon: (
             <AiFillFormatPainter className="text-[12rem] ml-8 md:ml-0 w-max md:text-[15rem] text-black/50 group-hover:text-black/70 transition-all p-3" />
         ),
@@ -26,7 +26,7 @@ const serviceData = [
         title: "Electrician Services",
         desc: "Electricians At Your Door-Step At Lowest Cost!!!",
         img: ELECTRICIAN_3D,
-        link: "/services/electrician",
+        link: "services/electrician",
         icon: (
             <AiFillThunderbolt className="text-[12rem] ml-8 md:ml-0 w-max md:text-[15rem] text-black/50 group-hover:text-black/70 transition-all p-3" />
         ),
@@ -35,7 +35,7 @@ const serviceData = [
         title: "Plumbing Services",
         desc: "Plumbers At Your Door-Step At Lowest Cost!!!",
         img: PLUMBER_3D,
-        link: "/services/plumber",
+        link: "services/plumber",
         icon: (
             <GiKitchenTap className="text-[12rem] ml-8 md:ml-0 w-max md:text-[15rem] text-black/50 group-hover:text-black/70 transition-all p-3" />
         ),
@@ -44,7 +44,7 @@ const serviceData = [
         title: "Packing & Moving Services",
         desc: "Packers At Your Door-Step At Lowest Cost!!!",
         img: PACKER_3D,
-        link: "/services/packer",
+        link: "services/packer",
         icon: (
             <BsFillBoxSeamFill className="text-[12rem] ml-8 md:ml-0 w-max md:text-[15rem] text-black/50 group-hover:text-black/70 transition-all p-3" />
         ),
@@ -53,7 +53,7 @@ const serviceData = [
         title: "Interior Designing Services",
         desc: "Interior Designers At Your Door-Step At Lowest Cost!!!",
         img: DESIGNER_3D,
-        link: "/services/designer",
+        link: "services/designer",
         icon: (
             <TfiRulerAlt2 className="text-[12rem] ml-8 md:ml-0 w-max md:text-[15rem] text-black/50 group-hover:text-black/70 transition-all p-3" />
         ),

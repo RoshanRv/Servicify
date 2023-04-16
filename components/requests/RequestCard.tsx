@@ -20,7 +20,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 import { LinkButton } from "../button/Button"
 import { BiUser } from "react-icons/bi"
 
-const RequestCard = () => {
+const RequestCard = ({ data }: { data: RequestProps }) => {
     return (
         <div className="flex rounded-xl shadow-xl bg-light dark:bg-dark items-center  overflow-hidden group border-2 border-pri">
             {/* Left Side */}
@@ -31,34 +31,36 @@ const RequestCard = () => {
 
             <div className="flex justify-start items-start flex-col gap-y-4 p-4 dark:text-light text-dark   relative">
                 {/* Name */}
-                <h1 className="text-pri text-3xl font-semibold">Reddy</h1>
+                <h1 className="text-pri text-3xl font-semibold">{data.name}</h1>
                 {/* Phone */}
                 <div className="flex items-center justify-center gap-x-2 ">
                     <AiOutlinePhone />
-                    <p>234230090</p>
+                    <p>{data.phoneno}</p>
                 </div>
                 {/* Email */}
                 <div className="flex items-center justify-center gap-x-2 ">
                     <AiOutlineMail />
-                    <p>sdA@asdas.com</p>
+                    <p>{data.email}</p>
                 </div>
                 {/* Address */}
-                <div className="flex items-center justify-center gap-x-2 ">
+                {/* <div className="flex items-center justify-center gap-x-2 ">
                     <FaRegAddressCard />
                     <p>{"13/dasdas sadasd "}</p>
-                </div>
+                </div> */}
                 {/*   Btn   */}
                 <div className="flex flex-col md:flex-row gap-4">
-                    <LinkButton link={`/services/sdasd7889`} size="small">
-                        <h1>Call Now</h1>
-                    </LinkButton>
-                    <LinkButton
-                        variant={"primary"}
-                        link={`/services/sdasd7889`}
-                        size="small"
+                    <a
+                        className="rounded-md outline-0 text-white font-semibold shadow-lg shadow-black/50 bg-pri px-8 md:py-2 py-1 text-lg md:text-xl hover:scale-105 active:scale-95 transition-all"
+                        href={`tel:${data.phoneno}`}
                     >
-                        <h1>Mail Now</h1>
-                    </LinkButton>
+                        Call Now
+                    </a>
+                    <a
+                        className="rounded-md outline-0 text-white font-semibold shadow-lg shadow-black/50 bg-pri px-8 md:py-2 py-1 text-lg md:text-xl hover:scale-105 active:scale-95 transition-all"
+                        href={`mailto:${data.email}`}
+                    >
+                        Mail Now
+                    </a>
                 </div>
             </div>
         </div>

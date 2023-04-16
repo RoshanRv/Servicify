@@ -116,7 +116,7 @@ const SignUp2 = ({
                     onClick={
                         role === "user"
                             ? handleSubmit(handleSignUp)
-                            : handleNext
+                            : handleSubmit(handleNext)
                     }
                     width
                 >

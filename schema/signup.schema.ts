@@ -11,7 +11,7 @@ export const signUp1Schema = object({
 
 export const signUp2Schema = object({
     name: string().min(1, "Name is Required"),
-    phoneno: string().min(10, "Phone No is Required"),
+    phoneno: string().min(5, "Phone No is Required"),
     city: string().min(1, "City is Required"),
 })
 

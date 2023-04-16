@@ -13,31 +13,31 @@ const bannerData = [
         title: "Painting Services",
         desc: "Painters At Your Door-Step At Lowest Cost!!!",
         img: PAINTER_IMG,
-        link: "/services/painter",
+        link: "services/painter",
     },
     {
         title: "Electrician Services",
         desc: "Electricians At Your Door-Step At Lowest Cost!!!",
         img: ELECTRICIAN_IMG,
-        link: "/services/electrician",
+        link: "services/electrician",
     },
     {
         title: "Plumbing Services",
         desc: "Plumbers At Your Door-Step At Lowest Cost!!!",
         img: PLUMBER_IMG,
-        link: "/services/plumber",
+        link: "services/plumber",
     },
     {
         title: "Packing & Moving Services",
         desc: "Packers At Your Door-Step At Lowest Cost!!!",
         img: PACKER_IMG,
-        link: "/services/packer",
+        link: "services/packer",
     },
     {
         title: "Interior Designing Services",
         desc: "Interior Designers At Your Door-Step At Lowest Cost!!!",
         img: DESIGNER_IMG,
-        link: "/services/designer",
+        link: "services/designer",
     },
 ]
 

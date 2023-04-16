@@ -64,7 +64,8 @@ const signin = () => {
             })
             setUser(resp.data.data)
             queryClient.invalidateQueries({ queryKey: ["users"] })
-            router.push("/profile")
+            if (resp.data.data.role === "user") router.push("/")
+            else router.push("/profile")
         },
         onError: (e: any) => {
             setToast({
